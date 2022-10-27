@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:sola/UI/calendar.dart';
 import 'package:sola/UI/calendar_page.dart';
 import 'package:sola/UI/counter_page.dart';
+import 'package:sola/UI/moon_page.dart';
 import 'package:sola/component/bottm/bottom_navy_bar.dart';
 import 'package:sola/UI/calendar.dart';
 
@@ -16,7 +17,7 @@ class Screen extends StatefulWidget {
 
 class _ScreenState extends State<Screen> {
   int currentIndex = 0;
-  List<Widget> PageList = [CounterPage(),CalendarScreen(),CalendarPage('カレンダー'),];
+  List<Widget> PageList = [CounterPage(),MoonPage(),CalendarScreen(),CalendarPage('カレンダー'),];
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +34,12 @@ class _ScreenState extends State<Screen> {
             icon: Icon(Icons.home),
             title: Text('Home'),
             activeColor: Colors.red,
+            textAlign: TextAlign.center,
+          ),
+          BottomNavyBarItem(
+            icon: Icon(Icons.cloud),
+            title: Text('Moon'),
+            activeColor: Colors.orange,
             textAlign: TextAlign.center,
           ),
           BottomNavyBarItem(
