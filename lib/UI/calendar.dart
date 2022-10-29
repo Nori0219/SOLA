@@ -1,6 +1,7 @@
 import 'dart:collection';
 
 import 'package:flutter/material.dart';
+import 'package:moon_phase/moon_widget.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class CalendarScreen extends StatefulWidget {
@@ -29,18 +30,19 @@ class _CalendarScreenState extends State<CalendarScreen> {
     _eventsList = {
       DateTime.now().subtract(Duration(days: 2)): ['Test A', 'Test B'],
       DateTime.now(): ['Test C', ],
+      
     };
   }
-
+  
   @override
   Widget build(BuildContext context) {
-    final _events = LinkedHashMap<DateTime, List>(
+    final _list = LinkedHashMap<DateTime, List>(
       equals: isSameDay,
       hashCode: getHashCode,
     )..addAll(_eventsList);
 
     List getEvent(DateTime day) {
-      return _events[day] ?? [];
+      return _list[day] ?? [];
     }
 
     return Scaffold(
@@ -78,3 +80,19 @@ class _CalendarScreenState extends State<CalendarScreen> {
         ]));
   }
 }
+
+_moonPhases() {
+    var _list = <Widget>[];
+    for (int i = 0; i < 30 * (24 / 12); i++) {
+      _list.add(
+        MoonWidget(
+          date: DateTime.now().add(Duration(hours: i * 12)),
+          resolution: 64,
+          size: 48,
+          moonColor: Colors.amber,
+          earthshineColor: Colors.blueGrey.shade900,
+        ),
+      );
+    }
+    return _list;
+  }
