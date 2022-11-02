@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:sola/UI/calendar.dart';
 import 'package:sola/UI/calendar_page.dart';
 import 'package:sola/UI/counter_page.dart';
+import 'package:sola/UI/home_page.dart';
 import 'package:sola/UI/moon_page.dart';
 import 'package:sola/component/bottm/bottom_navy_bar.dart';
 import 'package:sola/UI/calendar.dart';
@@ -17,13 +18,16 @@ class Screen extends StatefulWidget {
 
 class _ScreenState extends State<Screen> {
   int currentIndex = 0;
-  List<Widget> PageList = [CounterPage(),MoonPage(),CalendarScreen(),CalendarPage('カレンダー'),];
+  List<Widget> PageList = [HomePage(),MoonPage(),CounterPage(),CalendarPage('カレンダー'),];
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+
     return Scaffold(
       body: PageList[currentIndex],
       bottomNavigationBar: BottomNavyBar(
+        backgroundColor: Colors.black87,
         selectedIndex: currentIndex,
         showElevation: true,
         itemCornerRadius: 24,
@@ -43,8 +47,8 @@ class _ScreenState extends State<Screen> {
             textAlign: TextAlign.center,
           ),
           BottomNavyBarItem(
-            icon: Icon(Icons.sunny),
-            title: Text('Weather'),
+            icon: Icon(Icons.home_max_outlined),
+            title: Text('HOME'),
             activeColor: Colors.blue,
             textAlign: TextAlign.center,
           ),
