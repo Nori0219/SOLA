@@ -36,6 +36,9 @@ class _ClockState extends State<Clock> {
 
   @override
   Widget build(BuildContext context) {
+    var _size = MediaQuery.of(context).size;
+    var _height = MediaQuery.of(context).size.height;
+    var  _width = MediaQuery.of(context).size.width;
     return Container(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -43,11 +46,15 @@ class _ClockState extends State<Clock> {
         children: <Widget>[
           Text(
             currTime,
-            style: TextStyle(fontWeight: FontWeight.w200, fontSize: 50),
+            style: TextStyle(fontWeight: FontWeight.w200, fontSize: _height/15,
+            //color: Colors.white
+            ),
           ),
           Text(
             currDate,
-            style: TextStyle(fontWeight: FontWeight.w200, fontSize: 20),
+            style: TextStyle(fontWeight: FontWeight.w200, fontSize: _height/30,
+            //color: Colors.white
+            ),
           ),
         ],
       ),

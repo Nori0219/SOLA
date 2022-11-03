@@ -40,6 +40,7 @@ dependencies:
   intl: ^0.17.0
   moon_phase: ^1.0.1+8
   lottie: ^1.4.3
+  flutter_gradients: ^1.0.0+3
 
 dev_dependencies:
   flutter_test:
