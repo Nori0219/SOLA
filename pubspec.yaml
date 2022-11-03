@@ -41,6 +41,8 @@ dependencies:
   moon_phase: ^1.0.1+8
   lottie: ^1.4.3
   flutter_gradients: ^1.0.0+3
+  carousel_slider: ^4.1.1
+  url_launcher: ^6.1.6
 
 dev_dependencies:
   flutter_test:
@@ -68,6 +70,7 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
+    - assets/displey_images/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

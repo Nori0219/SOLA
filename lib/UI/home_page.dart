@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:sola/UI/moon_page.dart';
@@ -5,6 +6,7 @@ import 'package:sola/UI/widgets/item_widget.dart';
 import 'package:sola/UI/widgets/maincustomcard.dart';
 import 'package:sola/model/category.dart';
 import 'package:sola/model/topic.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -14,15 +16,21 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
+final Uri _url_official1 = Uri.parse('https://spiky-possum-bbc.notion.site/5-16-00de8e95f574405e93c8c7c0bda9437f');
+Future<void> _launchUrl1() async {
+  if (!await launchUrl(_url_official1,mode: LaunchMode.platformDefault,)) {
+    
+    throw 'アクセスできませんでした $_url_official1';
+  }
+}
+
+
 class _HomePageState extends State<HomePage> {
-
   var scaffoldKey = GlobalKey<ScaffoldState>();
-
   bool isExpanded = false;
-  late List<Category> categoryItems;
+
+  //late List<Category> categoryItems;
   //late List<Topic> topicListItems;
-
-
   @override
   void initState() {
     // TODO: implement initState
@@ -99,24 +107,97 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 function_Widget(isExpanded: isExpanded),
-                //Divider(),
-                // Container(
-                //   child: ListView.builder(
-                //     padding: EdgeInsets.all(5),
-                //     shrinkWrap: true,
-                //     itemCount: topicListItems.length,
-                //     scrollDirection: Axis.horizontal,
-                //     itemBuilder: (BuildContext context, index) {
-                //       //return CustomCard();
-                //     },
-                //   ),
-                // )
+                Divider(),
+                
+                scrol_Widget(height: _height),
+                Divider(),
+                scrol_Widget(height: _height),
+
               ],
               )
             ),
           ),
       );
     }
+}
+
+
+
+
+class scrol_Widget extends StatelessWidget {
+  const scrol_Widget({
+    Key? key,
+    required double height,
+  }) : _height = height, super(key: key);
+
+  final double _height;
+  
+  @override
+  Widget build(BuildContext context) {
+    return CarouselSlider(
+      items: [
+        GestureDetector(
+            onTap: (){
+              _launchUrl1() ;
+              print('作成中だよ');
+            },//遷移の記述を書く
+            child: Card(
+              child:  Container(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/displey_images/example.png'), //休講情報
+                   // fit: BoxFit.fill,
+                  ),
+                ),
+              ),
+            )
+        ),
+        GestureDetector(
+            onTap: (){
+              _launchUrl1() ;
+              print('作成中だよ');
+            },//遷移の記述を書く
+            child: Card(
+              child:  Container(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/displey_images/example.png'), //休講情報
+                    //fit: BoxFit.fill,
+                  ),
+                ),
+              ),
+            )
+        ),
+        GestureDetector(
+            onTap: (){
+              _launchUrl1() ;
+              print('作成中だよ');
+            },//遷移の記述を書く
+            child: Card(
+              child:  Container(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/displey_images/example.png'), //休講情報
+                   // fit: BoxFit.fill,
+                  ),
+                ),
+              ),
+            )
+        ),
+      ],
+      options: CarouselOptions(
+        height: _height * 0.22,
+        initialPage: 0, //最初のページ
+        //aspectRatio: 1/20,
+        enableInfiniteScroll: true, //無限スクロール
+        autoPlay: true, //自動スクロール
+        autoPlayInterval: Duration(seconds: 6), //スクロールのインターバル
+        autoPlayAnimationDuration: Duration(milliseconds: 800), //スクロールの時間
+        // autoPlayCurve: Curves.fastOutSlowIn, //スクロールの仕方
+        // enlargeCenterPage:false, //真ん中を拡大表示
+      ),
+    );
+  }
 }
 
 class function_Widget extends StatelessWidget {
