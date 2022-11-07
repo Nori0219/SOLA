@@ -28,8 +28,8 @@ class _CalendarScreenState extends State<CalendarScreen> {
 
     _selected = _focused;
     _eventsList = {
-      DateTime.now().subtract(Duration(days: 2)): ['Test A', 'Test B'],
-      DateTime.now(): ['Test C', ],
+     // DateTime.now().subtract(Duration(days: 2)): ['Test A', 'Test B'],
+      DateTime.now(): ['皆既月食観望会', ],
       
     };
   }

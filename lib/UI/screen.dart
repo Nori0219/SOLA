@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:sola/UI/calendar.dart';
-import 'package:sola/UI/calendar_page.dart';
 import 'package:sola/UI/counter_page.dart';
 import 'package:sola/UI/home_page.dart';
 import 'package:sola/UI/moon_page.dart';
@@ -18,7 +17,7 @@ class Screen extends StatefulWidget {
 
 class _ScreenState extends State<Screen> {
   int currentIndex = 0;
-  List<Widget> PageList = [HomePage(),MoonPage(),CounterPage(),CalendarPage('カレンダー'),];
+  List<Widget> PageList = [HomePage(),CounterPage(),];
 
   @override
   Widget build(BuildContext context) {
@@ -40,24 +39,24 @@ class _ScreenState extends State<Screen> {
             activeColor: Colors.red,
             textAlign: TextAlign.center,
           ),
-          BottomNavyBarItem(
-            icon: Icon(Icons.cloud),
-            title: Text('Moon'),
-            activeColor: Colors.orange,
-            textAlign: TextAlign.center,
-          ),
-          BottomNavyBarItem(
-            icon: Icon(Icons.home_max_outlined),
-            title: Text('HOME'),
-            activeColor: Colors.blue,
-            textAlign: TextAlign.center,
-          ),
-          BottomNavyBarItem(
-            icon: Icon(Icons.calendar_month),
-            title: Text('Calender'),
-            activeColor: Colors.pink,
-            textAlign: TextAlign.center,
-          ),
+          // BottomNavyBarItem(
+          //   icon: Icon(Icons.cloud),
+          //   title: Text('Moon'),
+          //   activeColor: Colors.orange,
+          //   textAlign: TextAlign.center,
+          // ),
+          // BottomNavyBarItem(
+          //   icon: Icon(Icons.home_max_outlined),
+          //   title: Text('HOME'),
+          //   activeColor: Colors.blue,
+          //   textAlign: TextAlign.center,
+          // ),
+          // BottomNavyBarItem(
+          //   icon: Icon(Icons.calendar_month),
+          //   title: Text('Calender'),
+          //   activeColor: Colors.pink,
+          //   textAlign: TextAlign.center,
+          // ),
           BottomNavyBarItem(
             icon: Icon(Icons.settings),
             title: Text('Settings'),

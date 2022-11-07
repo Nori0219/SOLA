@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:sola/UI/moon_page.dart';
 import 'package:sola/UI/widgets/item_widget.dart';
 import 'package:sola/UI/widgets/maincustomcard.dart';
-import 'package:sola/model/category.dart';
 import 'package:sola/model/topic.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -44,23 +43,7 @@ class _HomePageState extends State<HomePage> {
     //       "天体観測",
     //       "",
     //       true),
-    //   Topic(
-    //       "02 Apr 2019",
-    //       "流星群観測",
-    //       "ペルセウス座流星群の観測を行いました！",
-    //       "町屋海岸",
-    //       "天体観測",
-    //       "",
-    //       true),
-    //   Topic(
-    //       "02 Apr 2019",
-    //       "流星群観測",
-    //       "ペルセウス座流星群の観測を行いました！",
-    //       "町屋海岸",
-    //       "天体観測",
-    //       "",
-    //       true),
-    // ];
+
   }
 
   void _expand() {
@@ -178,7 +161,7 @@ class scrol_Widget extends StatelessWidget {
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage('assets/displey_images/example.png'), //休講情報
-                   // fit: BoxFit.fill,
+                    //fit: BoxFit.fill,
                   ),
                 ),
               ),
@@ -221,7 +204,7 @@ class function_Widget extends StatelessWidget {
             IconWidget(routing: '/moon',image: 'assets/icons/info.png',title: 'SOLA',),
             IconWidget(routing: '/moon',image: 'assets/icons/moon.png',title: '月の様子',),
             IconWidget(routing: '/moon',image: 'assets/icons/note.png',title: '活動記録',),
-            IconWidget(routing: '/moon',image: 'assets/icons/calendar.png',title: 'カレンダー',),
+            IconWidget(routing: '/calendar',image: 'assets/icons/calendar.png',title: 'カレンダー',),
             //IconWidget(routing: '/moon',image: 'assets/icons/setting.png',title: '設定',),
           ],
         ),
@@ -233,7 +216,7 @@ class function_Widget extends StatelessWidget {
             IconWidget(routing: '/moon',image: 'assets/icons/info.png',title: 'SOLA',),
             IconWidget(routing: '/moon',image: 'assets/icons/moon.png',title: '月の様子',),
             IconWidget(routing: '/moon',image: 'assets/icons/note.png',title: '活動記録',),
-            IconWidget(routing: '/moon',image: 'assets/icons/calendar.png',title: 'カレンダー',),
+            IconWidget(routing: '/calendar',image: 'assets/icons/calendar.png',title: 'カレンダー',),
             IconWidget(routing: '/moon',image: 'assets/icons/setting.png',title: '設定',),
             IconWidget(routing: '/moon',image: 'assets/icons/fortune.png',title: 'スタンプ',),
             IconWidget(routing: '/moon',image: 'assets/icons/ranking.png',title: 'ランキング',),
@@ -286,9 +269,14 @@ class TopBar_Widget extends StatelessWidget {
               ),
             ),
           ),
+          
           ),
         ),
         //Moon_widget(),
+        Container(
+          width: _width/2, 
+          margin: EdgeInsets.only(left: _width/4,  top: _height/40),
+          child: Container( child: Image.asset('assets/icons/SOLA_black_透過.png',height: _height/4))),
         Container(
           margin: EdgeInsets.only(left: 40, right: 40, top: _height/4),
           child: Material(
@@ -301,8 +289,8 @@ class TopBar_Widget extends StatelessWidget {
                 decoration: InputDecoration(
                   contentPadding: EdgeInsets.all(10),
                   prefixIcon:
-                  Icon(Icons.search, color: Colors.orange[200], size: 30),
-                  hintText: "What're you looking for?",
+                  Icon(Icons.star, color: Colors.orange[200], size: 20),
+                  hintText: "天文サークルSOLAアプリへようこそ",
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30.0),
                       borderSide: BorderSide.none),
