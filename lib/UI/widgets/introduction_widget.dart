@@ -150,7 +150,7 @@ class IntoductionWidget extends StatelessWidget {
                      print(titles[index]);
                      //_urlLaunchWithStringButton.launchUriWithString(context,urls[index],);
                   },
-                  initialPage: titles.length, // リストの一番下のものを最初に表示する
+                  initialPage: 5, // リストの一番下のものを最初に表示する
                   align : ALIGN.CENTER 
                 ),
               ),
