@@ -8,11 +8,12 @@ class Clock extends StatefulWidget {
 }
 
 class _ClockState extends State<Clock> {
-  String currTime = "How's moon ?";
+  String currTime = "Today's Moon";
   String currDate = "";
   var timer;
 
   @override
+  //毎秒時計を更新する記述
   void initState() {
     super.initState();
     timer =
@@ -52,7 +53,7 @@ class _ClockState extends State<Clock> {
           ),
           Text(
             currDate,
-            style: TextStyle(fontWeight: FontWeight.w200, fontSize: _height/30,
+            style: TextStyle(fontWeight: FontWeight.w200, fontSize: _height/25,
             //color: Colors.white
             ),
           ),
