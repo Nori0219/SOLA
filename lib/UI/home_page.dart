@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:sola/UI/moon_page.dart';
 import 'package:sola/UI/widgets/item_widget.dart';
-import 'package:sola/UI/widgets/maincustomcard.dart';
-import 'package:sola/model/topic.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 
@@ -80,12 +78,12 @@ class _HomePageState extends State<HomePage> {
                       GestureDetector(
                           onTap: _expand,
                           child: Text(
-                            isExpanded ? "close" : "show",
+                            isExpanded ? "閉じる" : "もっとみる",
                             style: TextStyle(
                                 color: Colors.blueAccent,
                                 ),
                           )),
-                      IconButton(icon: isExpanded? Icon(Icons.arrow_drop_up, color: Colors.orange[200],) : Icon(Icons.arrow_drop_down, color: Colors.orange[200],), onPressed: _expand)
+                     // IconButton(icon: isExpanded? Icon(Icons.arrow_drop_up, color: Colors.orange[200],) : Icon(Icons.arrow_drop_down, color: Colors.orange[200],), onPressed: _expand)
                     ],
                   ),
                 ),
@@ -95,7 +93,6 @@ class _HomePageState extends State<HomePage> {
                 scrol_Widget(height: _height),
                 Divider(),
                 scrol_Widget(height: _height),
-
               ],
               )
             ),
@@ -203,7 +200,7 @@ class function_Widget extends StatelessWidget {
           children: [
             IconWidget(routing: '/moon',image: 'assets/icons/info.png',title: 'SOLA',),
             IconWidget(routing: '/moon',image: 'assets/icons/moon.png',title: '月の様子',),
-            IconWidget(routing: '/moon',image: 'assets/icons/note.png',title: '活動記録',),
+            IconWidget(routing: '/introducton',image: 'assets/icons/note.png',title: '活動記録',),
             IconWidget(routing: '/calendar',image: 'assets/icons/calendar.png',title: 'カレンダー',),
             //IconWidget(routing: '/moon',image: 'assets/icons/setting.png',title: '設定',),
           ],
@@ -215,20 +212,15 @@ class function_Widget extends StatelessWidget {
           children: [
             IconWidget(routing: '/moon',image: 'assets/icons/info.png',title: 'SOLA',),
             IconWidget(routing: '/moon',image: 'assets/icons/moon.png',title: '月の様子',),
-            IconWidget(routing: '/moon',image: 'assets/icons/note.png',title: '活動記録',),
+            IconWidget(routing: '/introducton',image: 'assets/icons/note.png',title: '活動記録',),
             IconWidget(routing: '/calendar',image: 'assets/icons/calendar.png',title: 'カレンダー',),
-            IconWidget(routing: '/moon',image: 'assets/icons/setting.png',title: '設定',),
-            IconWidget(routing: '/moon',image: 'assets/icons/fortune.png',title: 'スタンプ',),
-            IconWidget(routing: '/moon',image: 'assets/icons/ranking.png',title: 'ランキング',),
-            IconWidget(routing: '/moon',image: 'assets/icons/sign.png',title: '星座',),
-            IconWidget(routing: '/moon',image: 'assets/icons/weather.png',title: '天気',),
-            IconWidget(routing: '/moon',image: 'assets/icons/padlock.png',title: '管理者',),
-            
-            
-          // IconWidget(routing: '/moon',image: 'assets/images/gadget.png',title: '明日の月齢',),
-          // IconWidget(routing: '/moon',image: 'assets/images/gadget.png',title: '明日の月齢',),
-          // IconWidget(routing: '/moon',image: 'assets/images/gadget.png',title: '明日の月齢',),
-          // ],
+            IconWidget(routing: '/unimplement',image: 'assets/icons/fortune.png',title: 'スタンプ',),
+            //IconWidget(routing: '/unimplement',image: 'assets/icons/ranking.png',title: 'ランキング',),
+            IconWidget(routing: '/unimplement',image: 'assets/icons/sign.png',title: '星座',),
+            //IconWidget(routing: '/unimplement',image: 'assets/icons/weather.png',title: '天気',),
+            IconWidget(routing: '/unimplement',image: 'assets/icons/padlock.png',title: '管理者',),
+            IconWidget(routing: '/unimplement',image: 'assets/icons/setting.png',title: '設定',),
+        
       ]),
         crossFadeState:
         isExpanded ? CrossFadeState.showSecond : CrossFadeState.showFirst,
@@ -283,19 +275,26 @@ class TopBar_Widget extends StatelessWidget {
             borderRadius: BorderRadius.circular(30.0),
             elevation: 8,
             child: Container(
-              child: TextFormField(
-                cursorColor: Colors.orange[200],
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.all(10),
-                  prefixIcon:
-                  Icon(Icons.star, color: Colors.orange[200], size: 20),
-                  hintText: "天文サークルSOLAアプリへようこそ",
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30.0),
-                      borderSide: BorderSide.none),
-                ),
+              padding: EdgeInsets.all(10),
+              width: _width/1.2,
+              decoration: BoxDecoration(
+                //border: Border.all(color: Colors.blue), //縁の色
+                borderRadius: BorderRadius.circular(30.0),
               ),
+              child:  const Text('三重大学天文サークル公式アプリ',textAlign: TextAlign.center,style: TextStyle(),)
+              // child: TextFormField(
+              //   cursorColor: Colors.orange[200],
+              //   keyboardType: TextInputType.text,
+              //   decoration: InputDecoration(
+              //     contentPadding: EdgeInsets.all(10),
+              //     prefixIcon:
+              //     Icon(Icons.star, color: Colors.orange[200], size: 20),
+              //     hintText: "三重大学天文サークル公式アプリ",
+              //     border: OutlineInputBorder(
+              //         borderRadius: BorderRadius.circular(30.0),
+              //         borderSide: BorderSide.none),
+              //   ),
+              // ),
             ),
           ),
         ),
@@ -306,12 +305,13 @@ class TopBar_Widget extends StatelessWidget {
             //crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
-              Opacity(
-                opacity: 0.5,
-                child: GestureDetector(
-                  onTap: (){},
-                    child: Icon(Icons.notifications, color: Colors.black,size: 30,)),
-              ),
+              //右上のベルマーク
+              // Opacity(
+              //   opacity: 0.5,
+              //   child: GestureDetector(
+              //     onTap: (){},
+              //       child: Icon(Icons.notifications, color: Colors.black,size: 30,)),
+              // ),
             ],
           ),
         ),

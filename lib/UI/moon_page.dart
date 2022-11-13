@@ -24,10 +24,15 @@ class _MoonPageState extends State<MoonPage> {
     var _height = MediaQuery.of(context).size.height;
     var  _width = MediaQuery.of(context).size.width;
 
+    var _currentPositionX = _width/12;
+    var _currentPositionY = _height/30;
+    var position = const Offset(40, 40);
+
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor:  Color.fromARGB(255, 63, 102, 168).withOpacity(0.1),
+        title: const Text('今日の月の様子'),
+        backgroundColor:  Colors.blueAccent.withOpacity(0.5),
         elevation: 1,
       ),
       //backgroundColor:  Color.fromARGB(255, 2, 0, 25),
@@ -56,12 +61,12 @@ class _MoonPageState extends State<MoonPage> {
                             earthshineColor: Color.fromARGB(255, 30, 29, 29),
                           ),
                         ),
+                        
                         Positioned(//宇宙飛行士
-                          right: _width/12,
-                          top: _height/30,
-                         
+                          right: _currentPositionX,
+                          top: _currentPositionY,
                           child:SizedBox( height:_height / 6, child: Lottie.asset('assets/images/107299-satellite-moon-astronaut.json'))
-                          ),
+                           ),
                         Positioned(//隕石
                           right: _width/1.8,
                           height:_height / 4.5, 
