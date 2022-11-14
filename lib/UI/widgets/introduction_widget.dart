@@ -44,7 +44,7 @@ class IntoductionWidget extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           image: DecorationImage(
-            image: AssetImage('assets/images/5:16焚き火マシュマロ.jpg'),
+            image: AssetImage('assets/images/0516焚き火マシュマロ.jpg'),
             fit: BoxFit.cover,
           ),
         ),
@@ -53,7 +53,7 @@ class IntoductionWidget extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           image: DecorationImage(
-            image: AssetImage('assets/images/5:27学内観望会.jpg'),
+            image: AssetImage('assets/images/0527学内観望会.jpg'),
             fit: BoxFit.cover,
           ),
         ),
@@ -62,7 +62,7 @@ class IntoductionWidget extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           image: DecorationImage(
-            image: AssetImage('assets/images/6:29曽爾高原.jpg'),
+            image: AssetImage('assets/images/0629曽爾高原.jpg'),
             fit: BoxFit.cover,
           ),
         ),
@@ -71,7 +71,7 @@ class IntoductionWidget extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           image: DecorationImage(
-            image: AssetImage('assets/images/6:29曽爾高原集合写真.jpg'),
+            image: AssetImage('assets/images/0629曽爾高原集合写真.jpg'),
             fit: BoxFit.cover,
           ),
         ),
@@ -80,7 +80,7 @@ class IntoductionWidget extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           image: DecorationImage(
-            image: AssetImage('assets/images/8:10花火大会.heic'),
+            image: AssetImage('assets/images/0810花火大会.heic'),
             fit: BoxFit.cover,
           ),
         ),
@@ -89,7 +89,7 @@ class IntoductionWidget extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           image: DecorationImage(
-            image: AssetImage('assets/images/8:14青山高原.heic'),
+            image: AssetImage('assets/images/0814青山高原.heic'),
             fit: BoxFit.cover,
           ),
         ),
@@ -98,7 +98,7 @@ class IntoductionWidget extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           image: DecorationImage(
-            image: AssetImage('assets/images/8月20日教育ボランティア.jpg'),
+            image: AssetImage('assets/images/0820教育ボランティア.jpg'),
             fit: BoxFit.cover,
           ),
         ),
@@ -107,7 +107,7 @@ class IntoductionWidget extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           image: DecorationImage(
-            image: AssetImage('assets/images/11:8皆既月食.heic'),
+            image: AssetImage('assets/images/1108皆既月食.heic'),
             fit: BoxFit.cover,
           ),
         ),
