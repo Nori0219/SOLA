@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:sola/UI/moon_page.dart';
-import 'package:sola/UI/widgets/item_widget.dart';
+import 'package:sola/UI/widgets/icon_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 
@@ -198,7 +198,7 @@ class function_Widget extends StatelessWidget {
           shrinkWrap: true,
           crossAxisCount: 4,
           children: [
-            IconWidget(routing: '/moon',image: 'assets/icons/info.png',title: 'SOLA',),
+            IconWidget(routing: '/whatSOLA',image: 'assets/icons/info.png',title: 'SOLA',),
             IconWidget(routing: '/moon',image: 'assets/icons/moon.png',title: '月の様子',),
             IconWidget(routing: '/introducton',image: 'assets/icons/note.png',title: '活動記録',),
             IconWidget(routing: '/calendar',image: 'assets/icons/calendar.png',title: 'カレンダー',),
@@ -210,7 +210,7 @@ class function_Widget extends StatelessWidget {
           shrinkWrap: true,
           crossAxisCount: 4,
           children: [
-            IconWidget(routing: '/moon',image: 'assets/icons/info.png',title: 'SOLA',),
+            IconWidget(routing: '/whatSOLA',image: 'assets/icons/info.png',title: 'SOLA',),
             IconWidget(routing: '/moon',image: 'assets/icons/moon.png',title: '月の様子',),
             IconWidget(routing: '/introducton',image: 'assets/icons/note.png',title: '活動記録',),
             IconWidget(routing: '/calendar',image: 'assets/icons/calendar.png',title: 'カレンダー',),
