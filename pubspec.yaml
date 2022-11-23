@@ -80,8 +80,11 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
-    - assets/displey_images/
     - assets/animation/
+    - assets/displey_images/
+    - assets/displey_images/Twitterバナー.png
+    - assets/displey_images/Instagramバナー.png
+    - assets/displey_images/LINEバナー.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

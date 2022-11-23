@@ -13,9 +13,17 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-final Uri _url_official1 = Uri.parse('https://spiky-possum-bbc.notion.site/5-16-00de8e95f574405e93c8c7c0bda9437f');
-Future<void> _launchUrl1() async {
-  if (!await launchUrl(_url_official1,mode: LaunchMode.platformDefault,)) {
+final Uri _url_official1 = Uri.parse('https://www.instagram.com/mieu_sola_/?hl=ja');
+Future<void> _launchUrlInstagram() async {
+  if (!await launchUrl(_url_official1,mode: LaunchMode.externalApplication,)) {
+    
+    throw 'アクセスできませんでした $_url_official1';
+  }
+}
+
+final Uri _url_official2 = Uri.parse('https://twitter.com/mieu_sola');
+Future<void> _launchTwitter() async {
+  if (!await launchUrl(_url_official2,mode: LaunchMode.externalApplication,)) {
     
     throw 'アクセスできませんでした $_url_official1';
   }
@@ -59,7 +67,6 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       
         body: Container(
-          
           height: _height,
           width: _width,
           child: SingleChildScrollView(
@@ -89,10 +96,16 @@ class _HomePageState extends State<HomePage> {
                 ),
                 function_Widget(isExpanded: isExpanded),
                 Divider(),
-                
                 scrol_Widget(height: _height),
                 Divider(),
-                scrol_Widget(height: _height),
+                Container(
+                  child: Image.asset('assets/displey_images/SOLA勧誘画像.png'),
+                  margin: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black, width: 2,
+                  ),
+                  ),
+                ),
               ],
               )
             ),
@@ -118,30 +131,14 @@ class scrol_Widget extends StatelessWidget {
       items: [
         GestureDetector(
             onTap: (){
-              _launchUrl1() ;
-              print('作成中だよ');
+              _launchTwitter() ;
+              print('twitterへ遷移');
             },//遷移の記述を書く
             child: Card(
               child:  Container(
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/displey_images/example.png'), //休講情報
-                   // fit: BoxFit.fill,
-                  ),
-                ),
-              ),
-            )
-        ),
-        GestureDetector(
-            onTap: (){
-              _launchUrl1() ;
-              print('作成中だよ');
-            },//遷移の記述を書く
-            child: Card(
-              child:  Container(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/displey_images/example.png'), //休講情報
+                    image: AssetImage('assets/displey_images/Twitterバナー.png'), //Twitter
                     //fit: BoxFit.fill,
                   ),
                 ),
@@ -150,19 +147,34 @@ class scrol_Widget extends StatelessWidget {
         ),
         GestureDetector(
             onTap: (){
-              _launchUrl1() ;
-              print('作成中だよ');
+              _launchUrlInstagram() ;
+              print('Instagramへ遷移');
             },//遷移の記述を書く
             child: Card(
               child:  Container(
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/displey_images/example.png'), //休講情報
+                    image: AssetImage('assets/displey_images/Instagramバナー.png'), //休講情報
                     //fit: BoxFit.fill,
                   ),
                 ),
               ),
             )
+        ),
+        GestureDetector(
+          onTap: () {
+            print('LINEがタップされました');
+          },
+          child: Card(
+            child: Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/displey_images/LINEバナー.png'),
+                  fit:BoxFit.fill
+                )
+              ),
+            ),
+          ),
         ),
       ],
       options: CarouselOptions(
@@ -171,9 +183,9 @@ class scrol_Widget extends StatelessWidget {
         //aspectRatio: 1/20,
         enableInfiniteScroll: true, //無限スクロール
         autoPlay: true, //自動スクロール
-        autoPlayInterval: Duration(seconds: 6), //スクロールのインターバル
+        autoPlayInterval: Duration(seconds: 7), //スクロールのインターバル
         autoPlayAnimationDuration: Duration(milliseconds: 800), //スクロールの時間
-        // autoPlayCurve: Curves.fastOutSlowIn, //スクロールの仕方
+        autoPlayCurve: Curves.fastOutSlowIn, //スクロールの仕方
         // enlargeCenterPage:false, //真ん中を拡大表示
       ),
     );

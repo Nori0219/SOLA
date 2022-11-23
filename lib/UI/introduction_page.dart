@@ -17,24 +17,25 @@ class IntroductionPage extends StatelessWidget {
             PageViewModel(
               title: '天文サークルSOLA\n公式アプリへようこそ！',
               body:
-                  '',
+                  '三重大学天文サークルSOLAの公式アプリ',
               image: Lottie.asset('assets/animation/floating-welcome.json'),
             ),
             PageViewModel(
-              title: '\n逆手に',
+              title: '今だからできる新しい試み',
               body:
-                  '活動の予定・記録、スタンプ機能',
+                  '場所に縛られずいつでもどこでも\n制限されない活動を\n\n本アプリはコロナ禍の新たな\nサークルの形として開発されました',
+            
               image: Lottie.asset('assets/animation/student-transparent.json'),
             ),
             PageViewModel(
-              title: 'オンラインだからこそ\n新しい価値を',
+              title: 'ここにも広がる新しいSOLA',
               body:
-                  '活動の予定・記録、スタンプ機能',
-              image: Lottie.asset('assets/animation/student-transparent.json'),
+                  'SOLAアプリでできること\n月齢チェック・天体カレンダー\n活動記録・スタンプラリラリーなど\n\nその他の機能も追加予定！',
+              image: Lottie.asset('assets/animation/mobile-marketing.json'),
             ),
             PageViewModel(
-              title: '紹介ページを設けることで\n簡単にアプリをリッチにできるよ!',
-              body: '3ページ目だよ!',
+              title: '仲間と広がる可能性',
+              body: '本アプリは三重大学天文サークル\nSOLAのメンバーによって開発されました\n\nプログラミングやデザインに\n興味があるメンバーも募集しています！\n',
               image: Lottie.asset('assets/animation/modification-of-programming.json'),
             ),
           ],
