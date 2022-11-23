@@ -63,7 +63,7 @@ dev_dependencies:
 flutter_icons:
   android: true
   ios: true
-  image_path: 'assets/icons/SOLA_black.png'
+  image_path: 'assets/icons/SOLA_icon_var1.0.jpg'
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
