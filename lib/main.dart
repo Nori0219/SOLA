@@ -3,7 +3,6 @@ import 'package:intl/date_symbol_data_local.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sola/Constants/constants.dart';
 import 'package:sola/UI/calendar.dart';
-import 'package:sola/UI/first_page.dart';
 import 'package:sola/UI/home_page.dart';
 import 'package:sola/UI/introduction_page.dart';
 import 'package:sola/UI/moon_page.dart';
