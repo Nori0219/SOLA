@@ -54,7 +54,7 @@ class IntroductionPage extends StatelessWidget {
             activeSize: const Size(40, 10.0),
             activeColor: Colors.blue,
             color: Colors.black26,
-            spacing: const EdgeInsets.symmetric(horizontal: 3.0),
+            spacing: const EdgeInsets.symmetric(horizontal: 2.0),
             activeShape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(25.0),
             ),

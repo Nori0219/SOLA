@@ -47,14 +47,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-void _showTutorial(BuildContext context) async {
-    final pref = await SharedPreferences.getInstance();
-
-    if (pref.getBool('isAlreadyFirstLaunch') != true) {
-      print('初回起動です');
-
-      pref.setBool('isAlreadyFirstLaunch', true);
-    }
-    print('初回起動ではありません');
-  }
