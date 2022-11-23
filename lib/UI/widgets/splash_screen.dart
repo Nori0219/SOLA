@@ -1,10 +1,13 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sola/Constants/constants.dart';
 import 'package:sola/UI/home_page.dart';
+import 'package:sola/UI/introduction_page.dart';
 
 class AnimatedSplashScreen extends StatefulWidget {
+  
   @override
   SplashScreenState createState() => new SplashScreenState();
 }
@@ -21,9 +24,22 @@ class SplashScreenState extends State<AnimatedSplashScreen>
     return Timer(_duration, navigationPage);
   }
 
-  void navigationPage() {
-    Navigator.of(context).pushReplacementNamed(MAIN_UI);
+  void navigationPage() async{
+    final pref = await SharedPreferences.getInstance();
+    if (pref.getBool('isAlreadyFirstLaunch') != true) {
+      // 最初の起動ならチュートリアル表示
+      print('初回起動です');
+      Navigator.of(context).pushReplacementNamed('/whatSOLA');
+      
+      await pref.setBool('isAlreadyFirstLaunch', true);
+    }else{
+      //それ以降の表示
+    print('初回起動ではありません');
+    Navigator.of(context).pushReplacementNamed('/home');
+    }
+    
   }
+
 
   @override
   void initState() {
@@ -40,6 +56,7 @@ class SplashScreenState extends State<AnimatedSplashScreen>
       _visible = !_visible;
     });
     startTime();
+
   }
 
   @override

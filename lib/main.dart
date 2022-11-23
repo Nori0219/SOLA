@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sola/Constants/constants.dart';
 import 'package:sola/UI/calendar.dart';
+import 'package:sola/UI/first_page.dart';
 import 'package:sola/UI/home_page.dart';
 import 'package:sola/UI/introduction_page.dart';
 import 'package:sola/UI/moon_page.dart';
@@ -32,16 +34,27 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData.dark(),
       themeMode: mode,
       routes: <String, WidgetBuilder>{
-        MAIN_UI: ( context) => HomePage(),
-        SPLASH_SCREEN: (context) => AnimatedSplashScreen(),
+        '/home': ( context) => HomePage(),
+        '/splash_screen': (context) => AnimatedSplashScreen(),
         '/moon':(context) => MoonPage(),
         '/calendar':(context) => CalendarScreen(),
         '/unimplement':(context) => UnimplementedPage(),
         '/introducton':(context) => IntoductionWidget(),
         '/whatSOLA':(context) => IntroductionPage(),
       },
-      initialRoute: SPLASH_SCREEN,
+      initialRoute: '/splash_screen',
       home: const HomePage(),
     );
   }
 }
+
+void _showTutorial(BuildContext context) async {
+    final pref = await SharedPreferences.getInstance();
+
+    if (pref.getBool('isAlreadyFirstLaunch') != true) {
+      print('初回起動です');
+
+      pref.setBool('isAlreadyFirstLaunch', true);
+    }
+    print('初回起動ではありません');
+  }
