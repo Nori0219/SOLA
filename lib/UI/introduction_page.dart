@@ -23,7 +23,7 @@ class IntroductionPage extends StatelessWidget {
             PageViewModel(
               title: '今だからできる新しい試み',
               body:
-                  '場所に縛られずいつでもどこでも\n制限されない活動を\n\n本アプリはコロナ禍の新たな\nサークルの形として開発されました',
+                  '場所に縛られずいつでもどこでも\n制限されない活動を\n\n本アプリはリモート世代が創る\n新たなサークルの形として開発されました',
             
               image: Lottie.asset('assets/animation/student-transparent.json'),
             ),
