@@ -30,7 +30,7 @@ class IntroductionPage extends StatelessWidget {
             PageViewModel(
               title: 'ここにも広がる新しいSOLA',
               body:
-                  'SOLAアプリでできること\n月齢チェック・天体カレンダー\n活動記録・スタンプラリラリーなど\n\nその他の機能も追加予定！',
+                  'SOLAアプリでできること\n月齢チェック・天体カレンダー\n活動記録・スタンプラリーなど\n\nその他の機能も追加予定！',
               image: Lottie.asset('assets/animation/mobile-marketing.json'),
             ),
             PageViewModel(
