@@ -22,8 +22,10 @@ class _CalendarScreenState extends State<CalendarScreen> {
     super.initState();
     _selectedDay = _focusedDay;
     _eventsList = {
-      DateTime(2022,11,8): ['皆既月食観望会＠屋上'],
-      DateTime(2022,11,18): ['しし座流星群＠町屋海岸'],
+      DateTime(2022,11,8): ['皆既月食観望会'],
+      DateTime(2022,11,18): ['しし座流星群'],
+      DateTime(2022,12,14): ['双子座流星群'],
+      DateTime(2022,12,23): ['こぐま座流星群'],
     };
   }
 
