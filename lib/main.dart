@@ -10,39 +10,49 @@ import 'package:sola/UI/unimplemented_page.dart';
 import 'package:sola/UI/widgets/introduction_widget.dart';
 import 'package:sola/UI/widgets/splash_screen.dart';
 import 'package:sola/component/bottm/bottom_navy_bar.dart';
+import 'package:provider/provider.dart';
+import 'package:sola/config/MyTheme.dart';
+import 'package:sola/UI/config.dart';
 
-void main() {
-  initializeDateFormatting().then((_) =>runApp(MyApp()));
+
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  MyTheme();
+  initializeDateFormatting().then((_) => runApp(MyApp()));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+  // const MyApp({super.key});
+  
   @override
   Widget build(BuildContext context) {
-    ThemeMode mode = ThemeMode.system;
-    return MaterialApp(
-
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      // theme: ThemeData(
-      //   primaryColor: Colors.blue,
-      // ),
-      //theme: ThemeData.dark(  ),
-      theme: ThemeData.light(), // ライト用テーマ
-      darkTheme: ThemeData.dark(),
-      themeMode: mode,
-      routes: <String, WidgetBuilder>{
-        '/home': ( context) => HomePage(),
-        '/splash_screen': (context) => AnimatedSplashScreen(),
-        '/moon':(context) => MoonPage(),
-        '/calendar':(context) => CalendarScreen(),
-        '/unimplement':(context) => UnimplementedPage(),
-        '/introducton':(context) => IntoductionWidget(),
-        '/whatSOLA':(context) => IntroductionPage(),
-      },
-      initialRoute: '/splash_screen',
-      home: const HomePage(),
+    return ChangeNotifierProvider(
+      create: (_) => MyTheme(),
+      child: Consumer<MyTheme>(
+        builder: (context, theme, _) {
+          return MaterialApp(
+            theme: theme.current,
+            debugShowCheckedModeBanner: false,
+            title: 'Flutter Demo',
+            // theme: ThemeData(
+            //   primaryColor: Colors.blue,
+            // ),
+            //theme: ThemeData.dark(  ),
+            routes: <String, WidgetBuilder>{
+              '/home': (context) => HomePage(),
+              '/splash_screen': (context) => AnimatedSplashScreen(),
+              '/moon': (context) => MoonPage(),
+              '/calendar': (context) => CalendarScreen(),
+              '/unimplement': (context) => UnimplementedPage(),
+              '/introducton': (context) => IntoductionWidget(),
+              '/whatSOLA': (context) => IntroductionPage(),
+              '/config': (context) => ConfigPage(),
+            },
+            initialRoute: '/splash_screen',
+            home: const HomePage(),
+          );
+        },
+      ),
     );
   }
 }

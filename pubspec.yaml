@@ -47,6 +47,8 @@ dependencies:
   shared_preferences: ^2.0.15
   vertical_card_pager: ^1.5.0
   introduction_screen: ^3.0.2
+  provider: ^6.0.4
+  sqflite: ^2.2.0+3
 
 
 dev_dependencies:
