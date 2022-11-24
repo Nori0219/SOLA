@@ -231,7 +231,7 @@ class function_Widget extends StatelessWidget {
             IconWidget(routing: '/unimplement',image: 'assets/icons/sign.png',title: '星座',),
             //IconWidget(routing: '/unimplement',image: 'assets/icons/weather.png',title: '天気',),
             IconWidget(routing: '/unimplement',image: 'assets/icons/padlock.png',title: '管理者',),
-            IconWidget(routing: '/unimplement',image: 'assets/icons/setting.png',title: '設定',),
+            IconWidget(routing: '/config',image: 'assets/icons/setting.png',title: '設定',),
         
       ]),
         crossFadeState:
