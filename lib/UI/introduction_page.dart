@@ -35,7 +35,7 @@ class IntroductionPage extends StatelessWidget {
             ),
             PageViewModel(
               title: '仲間と広がる可能性',
-              body: '本アプリは三重大学天文サークル\nSOLAのメンバーによって開発されました\n\nプログラミングやデザインに\n興味があるメンバーも募集しています！\n',
+              body: '本アプリは三重大学天文サークル\nSOLAのメンバーによって開発されています\n\nプログラミングやデザインに\n興味があるメンバーも募集しています！\n',
               image: Lottie.asset('assets/animation/modification-of-programming.json'),
             ),
           ],
