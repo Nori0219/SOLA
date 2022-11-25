@@ -12,12 +12,14 @@ import 'package:sola/UI/widgets/splash_screen.dart';
 import 'package:sola/component/bottm/bottom_navy_bar.dart';
 import 'package:provider/provider.dart';
 import 'package:sola/config/MyTheme.dart';
+import 'package:sola/config/config_init.dart';
 import 'package:sola/UI/config.dart';
 
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   MyTheme();
+  ConfigInit();
   initializeDateFormatting().then((_) => runApp(MyApp()));
 }
 
@@ -31,13 +33,9 @@ class MyApp extends StatelessWidget {
       child: Consumer<MyTheme>(
         builder: (context, theme, _) {
           return MaterialApp(
-            theme: theme.current,
             debugShowCheckedModeBanner: false,
+            theme: theme.current,
             title: 'Flutter Demo',
-            // theme: ThemeData(
-            //   primaryColor: Colors.blue,
-            // ),
-            //theme: ThemeData.dark(  ),
             routes: <String, WidgetBuilder>{
               '/home': (context) => HomePage(),
               '/splash_screen': (context) => AnimatedSplashScreen(),
