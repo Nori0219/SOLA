@@ -43,17 +43,16 @@ class _ConfigPageState extends State<ConfigPage> {
                       Provider.of<ConfigInit>(context, listen: false)
                           .toggle_dark_switch();
                     },
-                    //テスト
                   ),
-                  Text('スイッチテスト用'),
-                  SwitchWidget(
-                      title: '☆テストだよ☆',
-                      value: config.isTestSwitch,
-                      icon: Icon(Icons.info),
-                      onChanged: (bool value) {
-                        Provider.of<ConfigInit>(context, listen: false)
-                            .toggle_test_switch();
-                      }),
+                  // Text('スイッチテスト用'),
+                  // SwitchWidget(
+                  //     title: '☆テストだよ☆',
+                  //     value: config.isTestSwitch,
+                  //     icon: Icon(Icons.info),
+                  //     onChanged: (bool value) {
+                  //       Provider.of<ConfigInit>(context, listen: false)
+                  //           .toggle_test_switch();
+                  //     }),
                 ],
               ),
             ),
