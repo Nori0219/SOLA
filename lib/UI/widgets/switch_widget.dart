@@ -10,8 +10,6 @@ class SwitchWidget extends StatelessWidget {
 
   final String title;
   final Icon icon;
-
-  // final String subtitle;
   final bool value;
   final void Function(bool)? onChanged;
 
@@ -19,7 +17,6 @@ class SwitchWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SwitchListTile(
       title: Text(title),
-      // subtitle: Text('ダークモード切り替え'),
       value: value,
       onChanged: onChanged,
       secondary: icon,
