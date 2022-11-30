@@ -32,28 +32,34 @@ class _ConfigPageState extends State<ConfigPage> {
             ),
             body: Center(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   SwitchWidget(
-                    title: 'ダークモード',
+                    title: 'ダークモード切替',
                     value: config.isDarkSwitch,
                     icon: Icon(Icons.lightbulb_outline),
-                    onChanged: (bool value) {
-                      Provider.of<MyTheme>(context, listen: false).toggle();
-                      Provider.of<ConfigInit>(context, listen: false)
-                          .toggle_dark_switch();
-                    },
-                    //テスト
+                    onChanged: config.isAutoDarkSwitch //ダークモード自動切替がonなら操作禁止
+                        ? null
+                        : (bool value) {
+                            Provider.of<MyTheme>(context, listen: false)
+                                .toggle();
+                            Provider.of<ConfigInit>(context, listen: false)
+                                .toggle_dark_switch();
+                          },
                   ),
-                  Text('スイッチテスト用'),
                   SwitchWidget(
-                      title: '☆テストだよ☆',
-                      value: config.isTestSwitch,
-                      icon: Icon(Icons.info),
-                      onChanged: (bool value) {
-                        Provider.of<ConfigInit>(context, listen: false)
-                            .toggle_test_switch();
-                      }),
+                    title: 'ダークモード自動切替',
+                    value: config.isAutoDarkSwitch,
+                    icon: Icon(Icons.lightbulb_outline),
+                    onChanged: config.isDarkSwitch //ダークモード切替がonなら操作禁止
+                        ? null
+                        : (bool value) {
+                            Provider.of<MyTheme>(context, listen: false)
+                                .auto_toggle();
+                            Provider.of<ConfigInit>(context, listen: false)
+                                .auto_toggle_dark_switch();
+                          },
+                  ),
                 ],
               ),
             ),
