@@ -1,27 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:sola/config/MyTheme.dart';
 
 /*
 設定ページの設定をDBに保存する。
 */
 class ConfigInit extends ChangeNotifier {
-  bool _isDarkSwitch = false;
-  //test
-  bool _isTestSwitch = false;
+  bool _isDarkSwitch = false; //ダークモード切替のスイッチon,off
+  bool _isAutoDarkSwitch = false; //ダークモード自動切替のスイッチon,off
 
   ConfigInit() {
     _init();
   }
 
   bool get isDarkSwitch => _isDarkSwitch;
-  //test
-  bool get isTestSwitch => _isTestSwitch;
+  bool get isAutoDarkSwitch => _isAutoDarkSwitch;
 
   void _init() async {
     final pref = await SharedPreferences.getInstance();
     _isDarkSwitch = pref.getBool('isDarkSwitch') ?? false;
-    _isTestSwitch = pref.getBool('isTestSwitch') ?? false;
-
+    _isAutoDarkSwitch = pref.getBool('isAutoDarkSwitch') ?? false;
     notifyListeners();
   }
 
@@ -32,12 +30,10 @@ class ConfigInit extends ChangeNotifier {
     notifyListeners();
   }
 
-  //テスト
-
-  toggle_test_switch() async {
-    _isTestSwitch = !_isTestSwitch;
+  auto_toggle_dark_switch() async {
+    _isAutoDarkSwitch = !_isAutoDarkSwitch;
     final pref = await SharedPreferences.getInstance();
-    pref.setBool('isTestSwitch', _isTestSwitch);
+    pref.setBool('isAutoDarkSwitch', _isAutoDarkSwitch);
     notifyListeners();
   }
 }
