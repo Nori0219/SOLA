@@ -18,9 +18,7 @@ class ConfigPage extends StatefulWidget {
 class _ConfigPageState extends State<ConfigPage> {
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => ConfigInit(),
-      child: Consumer<ConfigInit>(
+    return Consumer<ConfigInit>(
         builder: (context, config, _) {
           var _height = MediaQuery.of(context).size.height;
           var _width = MediaQuery.of(context).size.width;
@@ -65,7 +63,6 @@ class _ConfigPageState extends State<ConfigPage> {
             ),
           );
         },
-      ),
-    );
+      );
   }
 }

@@ -18,9 +18,25 @@ import 'package:sola/UI/config.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  MyTheme();
-  ConfigInit();
-  initializeDateFormatting().then((_) => runApp(MyApp()));
+  //MyTheme();
+  //ConfigInit();
+  initializeDateFormatting().then((_) => 
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider<MyTheme>( //プロバイダー名
+          create: (context) => MyTheme(),//プロバイダー名
+        ),
+        ChangeNotifierProvider<ConfigInit>( 
+          create: (context) => ConfigInit(),
+        ),
+      ],
+      child: MaterialApp(
+        home: MyApp(),
+      ),
+    ),
+    )
+  );
 }
 
 class MyApp extends StatelessWidget {
