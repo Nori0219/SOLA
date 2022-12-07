@@ -18,8 +18,6 @@ import 'package:sola/UI/config.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  //MyTheme();
-  //ConfigInit();
   initializeDateFormatting().then((_) => 
   runApp(
     MultiProvider(
